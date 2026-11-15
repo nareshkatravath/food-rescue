@@ -223,6 +223,21 @@ export const GitHubDownloadModal: React.FC<GitHubDownloadModalProps> = ({ isOpen
               </button>
             </div>
 
+            <a
+              href={
+                releaseData?.assets.find((a) => a.name.endsWith('.apk'))
+                  ?.browser_download_url ||
+                `https://github.com/${activeRepo}/releases/latest/download/FoodRescue.apk`
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-2.5 px-3 bg-[#087A28] hover:bg-[#066521] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-xs transition"
+            >
+              <Smartphone className="w-4 h-4 shrink-0" />
+              <span>Download Android APK (FoodRescue.apk)</span>
+              <Download className="w-3.5 h-3.5 shrink-0" />
+            </a>
+
             <div className="grid grid-cols-2 gap-2">
               {zipDownloadUrl && (
                 <a
@@ -243,7 +258,7 @@ export const GitHubDownloadModal: React.FC<GitHubDownloadModalProps> = ({ isOpen
                   className="py-2 px-3 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition"
                 >
                   <Package className="w-3.5 h-3.5 shrink-0" />
-                  <span>Releases</span>
+                  <span>All Releases</span>
                   <ExternalLink className="w-3 h-3 shrink-0" />
                 </a>
               )}

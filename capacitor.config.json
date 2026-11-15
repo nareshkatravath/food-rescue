@@ -2,7 +2,6 @@
   "appId": "org.foodrescue.app",
   "appName": "FoodRescue",
   "webDir": "dist",
-  "bundledWebRuntime": false,
   "android": {
     "allowMixedContent": true
   }
