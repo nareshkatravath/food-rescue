@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Setup Java 17
         uses: actions/setup-java@v4
@@ -27,7 +27,7 @@ jobs:
           java-version: '17'
 
       - name: Install web dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build portable web bundle
         env:
@@ -37,7 +37,7 @@ jobs:
 
       - name: Initialize Capacitor Android project
         run: |
-          npm install --no-save @capacitor/core @capacitor/cli @capacitor/android
+          npm install --no-save --legacy-peer-deps @capacitor/core @capacitor/cli @capacitor/android
           npx cap add android
           npx cap sync android
 
