@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFoodRescue } from '../context/FoodRescueContext';
 import { FoodRescueLogo } from './FoodRescueLogo';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Github } from 'lucide-react';
+import { PWAInstallButton } from './PWAInstallButton';
+import { GitHubDownloadModal } from './GitHubDownloadModal';
 
 export const SplashScreen: React.FC = () => {
   const { setActiveScreen } = useFoodRescue();
+  const [showGitHubModal, setShowGitHubModal] = useState(false);
 
   return (
     <div className="flex-1 w-full flex flex-col justify-between items-center px-6 py-8 relative bg-gradient-to-b from-[#FFFDF2] via-[#FFFDF2] to-[#EEF8EE] overflow-hidden text-center select-none">
@@ -82,14 +85,32 @@ export const SplashScreen: React.FC = () => {
           <ArrowRight className="w-4 h-4" />
         </button>
 
-        {/* Login Option */}
-        <button
-          onClick={() => setActiveScreen('login')}
-          className="mt-3 py-2 px-4 text-xs font-semibold text-slate-600 hover:text-[#087A28] transition"
-        >
-          Already have an account? <span className="text-[#087A28] underline underline-offset-2">Login</span>
-        </button>
+        {/* Login & GitHub/PWA Actions */}
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-2 w-full">
+          <button
+            onClick={() => setActiveScreen('login')}
+            className="py-2 px-3 text-xs font-semibold text-slate-600 hover:text-[#087A28] transition"
+          >
+            Already have an account? <span className="text-[#087A28] underline underline-offset-2">Login</span>
+          </button>
+
+          <PWAInstallButton variant="compact" />
+
+          <button
+            type="button"
+            onClick={() => setShowGitHubModal(true)}
+            className="py-1.5 px-3 rounded-xl bg-white border border-slate-200 hover:border-slate-300 text-xs font-bold text-slate-700 hover:text-slate-900 flex items-center gap-1.5 shadow-2xs transition"
+          >
+            <Github className="w-3.5 h-3.5" />
+            <span>Download via GitHub</span>
+          </button>
+        </div>
       </div>
+
+      <GitHubDownloadModal
+        isOpen={showGitHubModal}
+        onClose={() => setShowGitHubModal(false)}
+      />
     </div>
   );
 };

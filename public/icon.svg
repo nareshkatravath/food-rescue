@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" rx="28" fill="#FFFDF2"/>
+  <circle cx="60" cy="60" r="50" fill="#ECFDF3"/>
+
+  <!-- Sprouting green leaves from bowl -->
+  <path d="M60 48C58 30 75 18 88 18C88 32 76 46 60 48Z" fill="#4CAF50"/>
+  <path d="M60 48C62 26 44 14 32 16C32 30 46 45 60 48Z" fill="#8BC34A"/>
+  <path d="M60 48C60 32 65 24 60 22C55 24 59 34 60 48Z" fill="#2E7D32"/>
+
+  <!-- Fresh food grains & warm nourishment in bowl -->
+  <path d="M32 55C32 50 42 45 60 45C78 45 88 50 88 55C88 58 78 62 60 62C42 62 32 58 32 55Z" fill="#F5A623"/>
+  <ellipse cx="60" cy="54" rx="22" ry="5" fill="#F7B944"/>
+  <circle cx="48" cy="53" r="2.5" fill="#FFE082"/>
+  <circle cx="68" cy="53" r="2.5" fill="#FFE082"/>
+  <circle cx="58" cy="52" r="2" fill="#FFE082"/>
+
+  <!-- Green rounded bowl -->
+  <path d="M24 54C24 54 26 88 60 88C94 88 96 54 96 54C96 54 84 57 60 57C36 57 24 54 24 54Z" fill="url(#bowlGradient)"/>
+  <path d="M24 54C34 58 86 58 96 54C86 51 34 51 24 54Z" fill="#0A8F30"/>
+  <path d="M48 87C48 91 72 91 72 87H48Z" fill="#065F20"/>
+
+  <defs>
+    <linearGradient id="bowlGradient" x1="24" y1="54" x2="96" y2="88" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#087A28"/>
+      <stop offset="0.6" stop-color="#0A8F30"/>
+      <stop offset="1" stop-color="#05531B"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -17,7 +17,10 @@ import {
   Bell,
   Users,
   BarChart3,
+  Github,
 } from 'lucide-react';
+import { PWAInstallButton } from './PWAInstallButton';
+import { GitHubDownloadModal } from './GitHubDownloadModal';
 
 function parseKgFromQuantity(quantityText: string): number {
   const match = quantityText.match(/(\d+(\.\d+)?)/);
@@ -40,6 +43,7 @@ export const ProfileScreen: React.FC = () => {
   const [editedPhone, setEditedPhone] = useState(currentUser?.phone || '');
   const [editedAddress, setEditedAddress] = useState(currentUser?.address || '');
   const [showSavedToast, setShowSavedToast] = useState(false);
+  const [showGitHubModal, setShowGitHubModal] = useState(false);
 
   useEffect(() => {
     if (!currentUser) {
@@ -421,6 +425,25 @@ export const ProfileScreen: React.FC = () => {
         )}
       </div>
 
+      {/* App Install & GitHub Download */}
+      <div className="bg-white rounded-3xl p-2 border border-slate-100 shadow-xs space-y-1.5 mb-4">
+        <button
+          type="button"
+          onClick={() => setShowGitHubModal(true)}
+          className="w-full p-2.5 rounded-2xl hover:bg-slate-50 transition flex items-center justify-between text-xs text-slate-800 font-bold"
+        >
+          <div className="flex items-center gap-2.5">
+            <Github className="w-4 h-4 text-slate-900" />
+            <span>Download App / Source via GitHub</span>
+          </div>
+          <span className="text-slate-400">→</span>
+        </button>
+
+        <div className="px-1 pb-1">
+          <PWAInstallButton />
+        </div>
+      </div>
+
       {/* Logout Button */}
       <button
         onClick={logout}
@@ -429,6 +452,11 @@ export const ProfileScreen: React.FC = () => {
         <LogOut className="w-4 h-4" />
         <span>Logout from Account</span>
       </button>
+
+      <GitHubDownloadModal
+        isOpen={showGitHubModal}
+        onClose={() => setShowGitHubModal(false)}
+      />
     </div>
   );
 };

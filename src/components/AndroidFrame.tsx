@@ -16,6 +16,7 @@ import { NotificationsScreen } from './NotificationsScreen';
 import { ProfileScreen } from './ProfileScreen';
 import { MyImpactScreen } from './MyImpactScreen';
 import { AdminDashboardScreen } from './AdminDashboardScreen';
+import { OfflineIndicator } from './PWAInstallButton';
 
 export const AndroidFrame: React.FC = () => {
   const { activeScreen, currentUser, setActiveScreen } = useFoodRescue();
@@ -84,6 +85,9 @@ export const AndroidFrame: React.FC = () => {
       <div className="flex-1 w-full overflow-y-auto overflow-x-hidden flex flex-col relative">
         {renderScreen()}
       </div>
+
+      {/* Offline PWA indicator */}
+      <OfflineIndicator />
 
       {/* Role-based Bottom Navigation Bar */}
       {showBottomNav && <BottomNavBar />}
