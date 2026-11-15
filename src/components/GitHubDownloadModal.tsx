@@ -238,6 +238,19 @@ export const GitHubDownloadModal: React.FC<GitHubDownloadModalProps> = ({ isOpen
               <Download className="w-3.5 h-3.5 shrink-0" />
             </a>
 
+            {actionsPageUrl && (
+              <a
+                href={`${actionsPageUrl}/workflows/build-android-apk.yml`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-2 px-3 bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-900 rounded-xl text-[11px] font-bold flex items-center justify-center gap-1.5 transition"
+              >
+                <Package className="w-3.5 h-3.5 shrink-0" />
+                <span>Or Download APK from GitHub Actions Artifacts</span>
+                <ExternalLink className="w-3 h-3 shrink-0" />
+              </a>
+            )}
+
             <div className="grid grid-cols-2 gap-2">
               {zipDownloadUrl && (
                 <a
