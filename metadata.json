@@ -1,0 +1,10 @@
+{
+  "name": "Remix Remix FoodRescue – Android Food Donation \u0026 Surplus Food Management",
+  "description": "Android application and interactive preview connecting food donors, NGOs, and people in need to fight hunger and reduce food waste.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
